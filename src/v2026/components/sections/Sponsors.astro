@@ -1,0 +1,165 @@
+---
+type SponsorAsset = string | { src: string }
+
+const sponsorModules = (
+  import.meta as ImportMeta & {
+    glob: (
+      pattern: string,
+      options?: { eager?: boolean; import?: string }
+    ) => Record<string, SponsorAsset>
+  }
+).glob('../../assets/sponsors/*.png', {
+  eager: true,
+  import: 'default',
+}) as Record<string, SponsorAsset>
+
+interface Sponsor {
+  name: string
+  fileName: string
+  url?: string
+}
+
+const sponsors: Sponsor[] = [
+  { name: 'DS Logo', fileName: 'ds-logo.png' },
+  { name: 'Ethical Hacking Consultores', fileName: 'ethical-hacking-consultores.png' },
+  { name: 'Harris GBS', fileName: 'harris-gbs.png' },
+  { name: 'Jala University', fileName: 'jala-university.png' },
+  { name: 'Michicósmico', fileName: 'michicosmico.png' },
+  { name: 'Twintro', fileName: 'twintro.png' },
+]
+
+interface AssetUrl {
+  src: string
+}
+
+const getSponsorImage = (fileName: string): string => {
+  for (const [path, asset] of Object.entries(sponsorModules)) {
+    if (path.includes(fileName)) {
+      return typeof asset === 'string' ? asset : (asset as AssetUrl).src
+    }
+  }
+  return ''
+}
+---
+
+<section id="sponsors" class="sponsors-section">
+  <div class="sponsors-shell">
+    <header class="sponsors-header">
+      <p class="sponsors-kicker">Patrocinadores</p>
+      <h2>Empresas que hacen posible el FLISoL 2026</h2>
+    </header>
+
+    <div class="sponsors-grid">
+      {sponsors.map((sponsor) => (
+        <div class:list={["sponsor-item", { "sponsor-item-dark": sponsor.name === "DS Logo" }]}>
+          <img
+            src={getSponsorImage(sponsor.fileName)}
+            alt={sponsor.name}
+            class="sponsor-logo"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .sponsors-section {
+    position: relative;
+    padding: 4.5rem 0.6rem 5.2rem;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(14, 8, 38, 0.95) 0%,
+        rgba(22, 12, 58, 0.96) 55%,
+        rgba(34, 14, 84, 0.98) 100%
+      ),
+      radial-gradient(circle at 80% 10%, rgba(66, 150, 202, 0.2), transparent 35%);
+    border-top: 4px solid #4296ca;
+  }
+
+  .sponsors-shell {
+    width: min(1460px, calc(100vw - 1.2rem));
+    margin: 0 auto;
+  }
+
+  .sponsors-header {
+    color: #f9f8ff;
+    margin-bottom: 2.2rem;
+    text-align: center;
+  }
+
+  .sponsors-kicker {
+    font-size: 0.72rem;
+    color: #e9ba2d;
+    margin-bottom: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  .sponsors-header h2 {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+    text-shadow: 2px 2px #18083b;
+  }
+
+  .sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .sponsor-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: #e0f0ff;
+    border: 2px solid rgba(66, 150, 202, 0.3);
+    border-radius: 12px;
+    transition: background 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      background: #c8e8ff;
+      border-color: rgba(66, 150, 202, 0.5);
+    }
+  }
+
+  .sponsor-item-dark {
+    background: rgba(15, 8, 40, 0.7);
+
+    &:hover {
+      background: rgba(22, 12, 58, 0.85);
+      border-color: rgba(66, 150, 202, 0.5);
+    }
+  }
+
+  .sponsor-logo {
+    max-width: 180px;
+    max-height: 80px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0.95) contrast(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .sponsors-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .sponsor-item {
+      padding: 1rem;
+    }
+
+    .sponsor-logo {
+      max-width: 140px;
+      max-height: 60px;
+    }
+  }
+</style>
