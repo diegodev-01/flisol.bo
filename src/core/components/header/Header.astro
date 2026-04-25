@@ -60,35 +60,20 @@ const data = YEAR_DATA[selectedYear] || YEAR_DATA['2025']
     <div class="nav-wrapper">
       <nav class="navbar">
         <ul class="nav-links">
-          <li class="nav-item" title="Sobre FLISoL">
-            <a href="#about">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-              <span class="nav-text">Sobre FLISoL</span>
-            </a>
+          <li class="nav-item">
+            <a href="#about">Sobre FLISoL</a>
           </li>
-          <li class="nav-item" title="Agenda">
-            <a href="#agenda">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-              <span class="nav-text">Agenda</span>
-            </a>
+          <li class="nav-item">
+            <a href="#agenda">Agenda</a>
           </li>
-          <li class="nav-item" title="Patrocinadores">
-            <a href="#sponsors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.74 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
-              <span class="nav-text">Patrocinadores</span>
-            </a>
+          <li class="nav-item">
+            <a href="#sponsors">Patrocinadores</a>
           </li>
-          <li class="nav-item" title="Ubicación">
-            <a href="#eventLocation">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span class="nav-text">Ubicación</span>
-            </a>
+          <li class="nav-item">
+            <a href="#eventLocation">Ubicación</a>
           </li>
-          <li class="nav-item" title="Contributors">
-            <a href="#contributors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              <span class="nav-text">Contributors</span>
-            </a>
+          <li class="nav-item">
+            <a href="#contributors">Contributors</a>
           </li>
         </ul>
       </nav>
@@ -175,7 +160,6 @@ const data = YEAR_DATA[selectedYear] || YEAR_DATA['2025']
 
   .flag {
     left: 5%;
-    border-radius: 10px;
   }
 
   .navbar {
@@ -204,17 +188,6 @@ const data = YEAR_DATA[selectedYear] || YEAR_DATA['2025']
     font-weight: bold;
     font-size: var(--fontSize);
     transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .nav-item a svg {
-    display: none;
-  }
-
-  .nav-text {
-    display: inline;
   }
 
   .nav-item a::after {
@@ -254,7 +227,7 @@ const data = YEAR_DATA[selectedYear] || YEAR_DATA['2025']
     gap: 2rem;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .header {
       justify-content: space-around;
     }
@@ -326,14 +299,7 @@ const data = YEAR_DATA[selectedYear] || YEAR_DATA['2025']
     .nav-item a {
       justify-content: center;
       width: 100%;
-    }
-
-    .nav-item a svg {
-      display: block;
-    }
-
-    .nav-text {
-      display: none;
+      padding: 0.5rem 1rem;
     }
 
     .menu-checkbox:checked ~ .nav-wrapper {
