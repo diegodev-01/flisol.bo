@@ -44,7 +44,7 @@ const eventoIniciado = diasRestantes === 0
             Inscríbete
           </a>
           <a
-            href="https://itch.io/embed-upload/17283752?color=862fff"
+            href="https://richixs.itch.io/gnu-runner-flisol-2026-cochabamba"
             target="_blank"
             rel="noopener noreferrer"
             class="hero-register-button"
@@ -366,7 +366,7 @@ const eventoIniciado = diasRestantes === 0
 
   function updateCountdown() {
     const now = new Date().getTime()
-    const distance = targetDate - now
+     const distance = Math.max(0, targetDate - now);
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24))
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
@@ -377,6 +377,10 @@ const eventoIniciado = diasRestantes === 0
     if (timerElement) {
       timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`
     }
+  }
+
+ if (distance === 0) {
+    clearInterval(intervalId);
   }
 
   setInterval(updateCountdown, 1000)

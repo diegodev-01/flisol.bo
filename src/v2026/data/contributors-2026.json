@@ -148,6 +148,28 @@
           "url": "https://www.instagram.com/m87.y2k"
         }
       ]
+    },
+    {
+      "name": "Ricardo Ramirez",
+      "role": "Software Developer",
+      "level": "gold",
+      "networks": [
+        {
+          "network_name": "Github",
+          "username": "Richixs",
+          "url": "https://github.com/Richixs"
+        },
+        {
+          "network_name": "LinkedIn",
+          "username": "Richixs",
+          "url": "https://www.linkedin.com/in/richixs"
+        },
+        {
+          "network_name": "Instagram",
+          "username": "cricky598",
+          "url": "https://www.instagram.com/cricky598"
+        }
+      ]
     }
   ]
 }
