@@ -1,6 +1,6 @@
 {
   "locationDay1": "UMSS MEMI, Cochabamba, Bolivia",
-  "locationDay2": "UCB Campus Tupuraya, Cochabamba, Bolivia",
+  "locationDay2": "UMSS MEMI, Cochabamba, Bolivia",
   "eventos": [
     {
       "dia": "Viernes",
@@ -224,12 +224,12 @@
           "confirmado": true
         },
         {
-          "horario": "10:05 - 12:15",
+          "horario": "10:05 - 11:15",
           "laboratorio": "Laboratorio 4",
           "actividad": "Taller: Evoluciona a AI Software Engineer",
           "speaker": "Pablo Jesus Pardo Alcocer",
           "confirmado": true,
-          "spanRows": 6
+          "spanRows": 3
         },
         {
           "horario": "10:05 - 13:25",
