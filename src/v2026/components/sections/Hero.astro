@@ -11,14 +11,6 @@ import PixelTux from '@/v2026/assets/pixel_tux.png'
 import { YEAR_DATA } from '@/data/years-data'
 
 const data = YEAR_DATA['2026']
-
-const fechaEvento = new Date('2026-04-24T00:00:00')
-const ahora = new Date()
-const diferencia = fechaEvento.getTime() - ahora.getTime()
-
-// Cálculo de días restantes
-const diasRestantes = Math.max(0, Math.floor(diferencia / (1000 * 60 * 60 * 24)))
-const eventoIniciado = diasRestantes === 0
 ---
 
 <section class="hero">
@@ -32,8 +24,6 @@ const eventoIniciado = diasRestantes === 0
       <Image src={FlisolLogo} alt="Flisol Logo" class="logo-flisol" />
       <div class="info-container">
         <div class="event-date">24 y 25 de Abril, 2026</div>
-        <h3>Faltan</h3>
-        <div id="countdown" class="timer">--:--:--:--</div>
         <div class="action-buttons">
           <a
             href={data.registerLink}
@@ -258,15 +248,6 @@ const eventoIniciado = diasRestantes === 0
     margin-bottom: 10px;
   }
 
-  .timer {
-    font-size: 2.5rem;
-    font-weight: bold;
-    background: rgba(33, 10, 80, 0.6);
-    padding: 10px 20px;
-    border: 2px solid #4296ca;
-    border-radius: 5px;
-  }
-
   .action-buttons {
     display: flex;
     gap: 1rem;
@@ -343,10 +324,6 @@ const eventoIniciado = diasRestantes === 0
       font-size: 1rem;
     }
 
-    .timer {
-      font-size: 1rem;
-    }
-
     .action-buttons {
       flex-direction: column;
       gap: 0.8rem;
@@ -361,28 +338,3 @@ const eventoIniciado = diasRestantes === 0
     }
   }
 </style>
-<script>
-  const targetDate = new Date('2026-04-24T08:30:00').getTime()
-
-  function updateCountdown() {
-    const now = new Date().getTime()
-     const distance = Math.max(0, targetDate - now);
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24))
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000)
-
-    const timerElement = document.getElementById('countdown')
-    if (timerElement) {
-      timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`
-    }
-  }
-
- if (distance === 0) {
-    clearInterval(intervalId);
-  }
-
-  setInterval(updateCountdown, 1000)
-  updateCountdown()
-</script>

@@ -60,11 +60,21 @@ const data = YEAR_DATA[selectedYear] || YEAR_DATA['2025']
     <div class="nav-wrapper">
       <nav class="navbar">
         <ul class="nav-links">
-          <li class="nav-item"><a href="#about">Sobre FLISoL</a></li>
-          <li class="nav-item"><a href="#agenda">Agenda</a></li>
-          <li class="nav-item"><a href="#contact">Contacto</a></li>
-          <li class="nav-item"><a href="#eventLocation">Ubicación</a></li> 
-          <li class="nav-item"><a href="#contributors">Contributors</a></li>
+          <li class="nav-item">
+            <a href="#about">Sobre FLISoL</a>
+          </li>
+          <li class="nav-item">
+            <a href="#agenda">Agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="#sponsors">Patrocinadores</a>
+          </li>
+          <li class="nav-item">
+            <a href="#eventLocation">Ubicación</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contributors">Contributors</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -150,7 +160,6 @@ const data = YEAR_DATA[selectedYear] || YEAR_DATA['2025']
 
   .flag {
     left: 5%;
-    border-radius: 10px;
   }
 
   .navbar {
@@ -218,7 +227,7 @@ const data = YEAR_DATA[selectedYear] || YEAR_DATA['2025']
     gap: 2rem;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .header {
       justify-content: space-around;
     }
@@ -285,6 +294,12 @@ const data = YEAR_DATA[selectedYear] || YEAR_DATA['2025']
       align-items: center;
       gap: 1rem;
       padding-left: 0;
+    }
+
+    .nav-item a {
+      justify-content: center;
+      width: 100%;
+      padding: 0.5rem 1rem;
     }
 
     .menu-checkbox:checked ~ .nav-wrapper {

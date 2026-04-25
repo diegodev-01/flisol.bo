@@ -54,6 +54,7 @@ This project is maintained by **Diego Perez([diegodev-01](https://github.com/die
 
 Agradecemos a las siguientes personas por sus valiosas contribuciones a este proyecto:
 
-- [Melany Ventura](https://github.com/dev-ventura) - ✨ (Contribucion en Diseño UI/UX Flisol2025 Cochabamba)
-- [Mauricio Conde](https://github.com/cr0wg4n) - ✨ (Contribucion Desarrollo Frontend Flisol2025 Cochabamba)
+- [Melany Ventura](https://github.com/dev-ventura) - ✨ (Contribucion en Diseño UI/UX, Flisol2025 Cochabamba)
+- [Mauricio Conde](https://github.com/cr0wg4n) - ✨ (Contribucion Desarrollo Frontend, Flisol2025 Cochabamba)
+- [Miguel Zubieta](https://github.com/m87y2k) - ✨ (Contribucion Desarrollo Frontend, Flisol2026 Cochabamba)
 - [Sidney Sahonero](https://github.com/SidnyTech) - ✨ (Contribución en Diseño UI/UX y desarrollo Full Stack, Flisol2026 Cochabamba)
