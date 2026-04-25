@@ -31,30 +31,8 @@ import RunTux from '@/v2026/assets/tux-wizard_v2.svg'
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
-
-  /* Se añadió para tener un fondo continuo con Hero-2026.astro */
-  background: linear-gradient(to bottom, #210a50 0%, #1a073d 100%);
+  background: #130831;
   overflow: hidden;
-}
-
-/* GRID overlay (continuidad con Hero-2026) */
-.content-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(66, 150, 202, 0.05) 1px, transparent 1px),
-    linear-gradient(to right, rgba(66, 150, 202, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-}
-
-.content-container::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(66,150,202,0.15), transparent 70%);
-  pointer-events: none;
 }
 
 .title {
@@ -66,14 +44,14 @@ import RunTux from '@/v2026/assets/tux-wizard_v2.svg'
 }
 
 .title span {
-  color: #efe524;
+  color: #e9ba2d;
   font-size: 4rem;
   text-align: center;
-  -webkit-text-stroke: 2px black;
   text-shadow:
-    0 0 10px #4296ca,
-    0 0 20px #4296ca,
-    4px 4px black;
+    2px 0 #18083b,
+    -2px 0 #18083b,
+    0 2px #18083b,
+    0 -2px #18083b;
 }
 
 .image-container,
@@ -102,10 +80,11 @@ import RunTux from '@/v2026/assets/tux-wizard_v2.svg'
 }
 
 .dark-title {
-  color: #efe524;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 10px rgba(66, 150, 202, 0.8);
+  font-size: 0.72rem;
+  color: #e9ba2d;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .dark-description {
@@ -116,8 +95,13 @@ import RunTux from '@/v2026/assets/tux-wizard_v2.svg'
 }
 
 .highlighted {
-  color: #efe524;
+  color: #e9ba2d;
   font-weight: bold;
+  text-shadow:
+    1px 0 #18083b,
+    -1px 0 #18083b,
+    0 1px #18083b,
+    0 -1px #18083b;
 }
 
 .image-container,
@@ -125,7 +109,7 @@ import RunTux from '@/v2026/assets/tux-wizard_v2.svg'
   border: 4px solid #4296ca;
   box-shadow:
     0 0 0 4px #210a50,
-    4px 4px 0 0 #efe524,
+    4px 4px 0 0 #e9ba2d,
     8px 8px 0 0 #000;
 }
 
