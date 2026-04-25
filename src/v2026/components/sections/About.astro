@@ -37,18 +37,6 @@ import RunTux from '@/v2026/assets/tux-wizard_v2.svg'
   overflow: hidden;
 }
 
-/* GRID overlay (continuidad con Hero) */
-.content-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(66, 150, 202, 0.05) 1px, transparent 1px),
-    linear-gradient(to right, rgba(66, 150, 202, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-}
-
 .content-container::after {
   content: "";
   position: absolute;
