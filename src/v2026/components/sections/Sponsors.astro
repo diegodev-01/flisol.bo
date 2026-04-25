@@ -51,7 +51,7 @@ const getSponsorImage = (fileName: string): string => {
 
     <div class="sponsors-grid">
       {sponsors.map((sponsor) => (
-        <div class:list={["sponsor-item", { "sponsor-item-dark": sponsor.name === "DS Logo" }]}>
+        <div class="sponsor-item">
           <img
             src={getSponsorImage(sponsor.fileName)}
             alt={sponsor.name}
@@ -121,20 +121,9 @@ const getSponsorImage = (fileName: string): string => {
     }
   }
 
-  .sponsor-item-dark {
-    background: rgba(15, 8, 40, 0.7);
-
-    &:hover {
-      background: rgba(22, 12, 58, 0.85);
-      border-color: rgba(66, 150, 202, 0.5);
-    }
-  }
-
   .sponsor-logo {
-    max-width: 180px;
-    max-height: 80px;
-    width: 100%;
-    height: auto;
+    width: 180px;
+    height: 80px;
     object-fit: contain;
     filter: brightness(0.95) contrast(1.05);
   }
