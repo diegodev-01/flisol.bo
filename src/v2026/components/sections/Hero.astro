@@ -338,28 +338,3 @@ const data = YEAR_DATA['2026']
     }
   }
 </style>
-<script>
-  const targetDate = new Date('2026-04-24T08:30:00').getTime()
-
-  function updateCountdown() {
-    const now = new Date().getTime()
-     const distance = Math.max(0, targetDate - now);
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24))
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000)
-
-    const timerElement = document.getElementById('countdown')
-    if (timerElement) {
-      timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`
-    }
-  }
-
- if (distance === 0) {
-    clearInterval(intervalId);
-  }
-
-  setInterval(updateCountdown, 1000)
-  updateCountdown()
-</script>
